@@ -4,7 +4,32 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        //Bloco using
+        string path = @"C:\Windows\Temp\file1.txt";
+        try
+        {
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string line = sr.ReadLine();
+                        Console.WriteLine(line);
+                    }
+                }
+            
+        }
+        catch (IOException e)
+        {
+            Console.WriteLine("An error occurred");
+            Console.WriteLine(e.ToString());
+        }
+
+
+
+
+
         // FileStream e StreamReader
+        /*
         string path = @"C:\Windows\Temp\file1.txt";
         StreamReader sr = null;
         try
@@ -25,7 +50,7 @@ internal class Program
         {
             if (sr != null) sr.Close();
         }
-
+        */
 
 
 
