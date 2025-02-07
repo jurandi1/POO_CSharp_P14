@@ -4,7 +4,36 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        // Directory, DirectoryInfo
+        string path = @"C:\Windows\Temp\myFolder";
+        try
+        {
+            var folders = Directory.EnumerateDirectories(path, "*.*", SearchOption.AllDirectories);
+            Console.WriteLine("FOLDERS: ");
+            foreach (string item in folders)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("------------------------------------------------------");
+            //------------------------------------------------------
+            var files = Directory.EnumerateFiles(path, "*.*", SearchOption.AllDirectories);
+            Console.WriteLine("FILES: ");
+            foreach (string item in files)
+            {
+                Console.WriteLine(item);
+            }
+            //------------------------------------------------------
+            Console.WriteLine("------------------------------------------------------");
+            Directory.CreateDirectory(path + @"\newfolder");
+        }
+        catch (IOException e)
+        {
+            Console.WriteLine("An error occurred");
+            Console.WriteLine(e.ToString());
+        }
+
         //StreamWriter
+        /*
         string sourcePath = @"C:\Windows\Temp\file1.txt";
         string targetPath = @"C:\Windows\Temp\file2.txt";
         try
@@ -25,6 +54,7 @@ internal class Program
             Console.WriteLine("An error occurred");
             Console.WriteLine(e.ToString());
         }
+        */
 
         //Bloco using
         /*
