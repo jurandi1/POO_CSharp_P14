@@ -4,7 +4,20 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        //Path
+        string path = @"C:\Windows\Temp\file1.txt";
+
+        Console.WriteLine("DirectorySeparatorChar: " + Path.DirectorySeparatorChar);
+        Console.WriteLine("PathSeparator: " + Path.PathSeparator);
+        Console.WriteLine("GetDirectoryName: " + Path.GetDirectoryName(path));
+        Console.WriteLine("GetFileName: " + Path.GetFileName(path));
+        Console.WriteLine("GetFileNameWithoutExtension: " + Path.GetFileNameWithoutExtension(path));
+        Console.WriteLine("GetExtension: " + Path.GetExtension(path));
+        Console.WriteLine("GetFullPath: " + Path.GetFullPath(path));
+        Console.WriteLine("GetTempPath: " + Path.GetTempPath());
+
         // Directory, DirectoryInfo
+        /*
         string path = @"C:\Windows\Temp\myFolder";
         try
         {
@@ -31,7 +44,7 @@ internal class Program
             Console.WriteLine("An error occurred");
             Console.WriteLine(e.ToString());
         }
-
+        */
         //StreamWriter
         /*
         string sourcePath = @"C:\Windows\Temp\file1.txt";
